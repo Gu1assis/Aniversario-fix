@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminianos • O Megaversário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="nav-logo">CINCO PATETAS E UM SIGNO</div>
+        <div class="nav-links">
+            <a href="#aniversariantes" class="nav-link">Aniversariantes</a>
+            <a href="#linha-tempo" class="nav-link">Linha do Tempo</a>
+            <a href="#musica" class="nav-link">Playlist da Festa</a>
+            <a href="#quiz" class="nav-link">Qual gêmeo é você?</a>
+            <a href="#localizacao" class="nav-link">Onde é?</a>
+            <a href="#presenca" class="nav-link">Confirmar Presença</a>
+        </div>
+    </nav>
+
+    <div class="space-bg" id="starsContainer">
+        <div class="time-tunnel-glow"></div>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-content scroll-reveal">
+            <p class="hero-tagline">20 DE JUNHO DE 2026 • 21:30</p>
+            <h1 class="hero-title">O Encontro mais <span style="font-size: 2em; display: block;">caótico do mês</span></h1>
+            
+            <div class="countdown-container" id="countdown">
+                <div class="countdown-box"><span class="countdown-num" id="days">00</span><span class="countdown-label">Dias</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="hours">00</span><span class="countdown-label">Horas</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="minutes">00</span><span class="countdown-label">Min</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="seconds">00</span><span class="countdown-label">Seg</span></div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#presenca" class="btn btn-primary">Confirmar Presença</a>
+                <a href="#quiz" class="btn btn-secondary">Descobrir meu Gêmeo</a>
+            </div>
+        </div>
+    </section>
+
+  <section id="aniversariantes" class="section-padding container">
+        <p class="section-tag">Os protagonistas da festa</p>
+        <h2 class="section-title">OS ANIVERSARIANTES</h2>
+        <p class="section-text">Clique em um dos aniversariantes para descobrir informações aleatórias e nada úteis sobre.</p>
+        
+        <div class="grid-aniversariantes">
+            <div class="birthday-card glass-card scroll-reveal" onclick="openBirthdayModal('messi')">
+                <div class="card-img-wrapper"><img src="fotos/messi-perfil.jpg" alt="Messi"></div>
+                <div class="card-info-overlay">
+                    <h3>Messi</h3>
+                    <p>??/??/Pré-Cambriano</p>
+                    <span class="card-instagram-tag">@messicomamor</span>
+                </div>
+            </div>
+            
+            <div class="birthday-card glass-card scroll-reveal" onclick="openBirthdayModal('michel')">
+                <div class="card-img-wrapper"><img src="fotos/perfil-michel.jpg" alt="Michel"></div>
+                <div class="card-info-overlay">
+                    <h3>Michel</h3>
+                    <p>15/06/1996</p>
+                    <span class="card-instagram-tag">@michelzeine</span>
+                </div>
+            </div>
+            
+            <div class="birthday-card glass-card scroll-reveal" onclick="openBirthdayModal('rachid')">
+                <div class="card-img-wrapper"><img src="fotos/perfil-rachid.jpg" alt="Rachid"></div>
+                <div class="card-info-overlay">
+                    <h3>Rachid</h3>
+                    <p>20/06/1997</p>
+                    <span class="card-instagram-tag">@po_rachid</span>
+                </div>
+            </div>
+            
+            <div class="birthday-card glass-card scroll-reveal" onclick="openBirthdayModal('vivi')">
+                <div class="card-img-wrapper"><img src="fotos/perfil-vivi.jpg" alt="Vivi"></div>
+                <div class="card-info-overlay">
+                    <h3>Vivi</h3>
+                    <p>11/06/2003</p>
+                    <span class="card-instagram-tag">@vivipaiva.m</span>
+                </div>
+            </div>
+            
+            <div class="birthday-card glass-card scroll-reveal" onclick="openBirthdayModal('charlinho')">
+                <div class="card-img-wrapper"><img src="fotos/perfil-charlinho.jpg" alt="Charlinho"></div>
+                <div class="card-info-overlay">
+                    <h3>Charlinho</h3>
+                    <p>30/05/2004</p>
+                    <span class="card-instagram-tag">@charles_edu.jr</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O modal permanece igual ao passo anterior -->
+    <div id="birthdayModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeBirthdayModal()">×</button>
+            <div class="evolution-container">
+                <div class="evolution-photos">
+                    <div class="photo-box">
+                        <span class="photo-tag">Criança</span>
+                        <img id="modalImgCrianca" src="" alt="Fase Criança">
+                    </div>
+                    <div class="photo-box">
+                        <span class="photo-tag">Hoje</span>
+                        <img id="modalImgAtual" src="" alt="Fase Atual">
+                    </div>
+                </div>
+                <div class="evolution-details">
+                    <h2 id="modalTitle">Nome</h2>
+                    <p id="modalMeta" class="modal-meta">Era</p>
+                    <p id="modalDesc" class="modal-message">Descrição</p>
+                    
+                    <div class="modal-quote-box" id="modalQuoteContainer">
+                        <span class="quote-title">Depoimento de alguém especial:</span>
+                        <p id="modalQuote" class="modal-quote">"Depoimento..."</p>
+                    </div>
+                    
+                    <div class="modal-instagram-box">
+                        <a id="modalInstagram" href="#" target="_blank" class="instagram-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></rect><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <span id="modalInstagramUser">@instagram</span>
+                        </a>
+                        <div class="modal-instagram-box">
+                        </div>
+
+                    <div class="comments-section">
+                        <span class="quote-title">Deixe um recado na Linha do Tempo:</span>
+                        
+                        <div class="comments-list" id="modalCommentsList">
+                            <p class="no-comments">Nenhum recado ainda. Seja o primeiro caótico a comentar!</p>
+                        </div>
+
+                        <form id="commentForm" onsubmit="enviarComentario(event)" class="comment-form">
+                            <input type="text" id="commentAuthor" placeholder="Seu nome" required autocomplete="off">
+                            <textarea id="commentText" placeholder="Escreva uma besteira ou depoimento..." rows="2" required></textarea>
+                            <button type="submit" class="btn-submit-comment">Enviar Recado</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="linha-tempo" class="section-padding bg-darker">
+        <div class="container">
+            <p class="section-tag">Linha do Tempo dos Gêmeos</p>
+            <h2 class="section-title">A História da terra (E dos Aniversariantes)</h2>
+            
+            <div class="custom-timeline">
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-marker highlight"></div>
+                    <div class="timeline-info">
+                        <h3>Há 4.6 Bilhões de Anos • Pré-Cambriano e o Messi</h3>
+                        <p>Formação da Terra, resfriamento do magma primordial e o <strong>Nascimento do Messi</strong>. Enquanto as primeiras bactérias anaeróbicas tentavam desesperadamente fazer fotossíntese, ele já passeava com seu Ford KA pelo supercontinente Gondwana.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-info">
+                        <h3>1996 • O Mike (não o wazowski) surge</h3>
+                        <p>A internet discada ganha as suas primeiras linhas comerciais no Brasil e a ovelha Dolly é clonada com sucesso. Inspirado por essa atmosfera de alta experimentação laboratorial, <strong>Michel nasce</strong> pronto para reiniciar roteadores apenas com a força do pensamento.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-info">
+                        <h3>1997 • A Ascensão de Rachid</h3>
+                        <p>O filme Titanic quebra todos os recordes imagináveis nas bilheterias e o Tamagotchi vira uma crise de responsabilidade pública internacional. No meio desse caos emocional e tecnológico de fim de século, <strong>Rachid nasce</strong> trazendo equilíbrio cósmico.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-info">
+                        <h3>2003 • O Despertar Cósmico da Vivi</h3>
+                        <p>O Orkut e o MSN Messenger redefinem a civilização moderna. Numa era de subfons coloridos, emoticons gigantes que travavam o computador e depoimentos em "scraps", <strong>Vivi nasce</strong> com o Bug do Milênio completamente superado e atualizado.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-info">
+                        <h3>2004 • A Conexão Charlinho</h3>
+                        <p>O Facebook é oficialmente fundado num quarto de Harvard e as primeiras câmeras de telemóvel começam a tirar fotos pixelizadas com orgulho. <strong>Charlinho nasce</strong> diretamente plugado na banda larga de alta velocidade da evolução.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="today-marker-wrapper">
+                        <div class="timeline-marker today"></div>
+                        <div class="timeline-info">
+                            <h3>20 DE JUNHO DE 2026 • O Grande Alinhamento</h3>
+                            <p>Todas as épocas, fendas temporais absurdas e galáxias convergem exatamente às 21:30 para o início da nossa celebração cósmica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="musica" class="section-padding container text-center scroll-reveal">
+        <p class="section-tag">Frequência Cósmica</p>
+        <h2 class="section-title">Trilha Sonora do Alinhamento</h2>
+        <p class="section-text max-width-md" style="margin: 0 auto 2.5rem auto;">Playlist exclusiva que viaja fluidamente do groove clássico ao digital e eletrônico moderno. Clique abaixo para abrir diretamente o portal no Spotify.</p>
+        <a href="INSIRA_AQUI_O_LINK_DA_PLAYLIST" target="_blank" class="btn btn-primary" style="gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.35-1.438-5.305-1.764-8.786-.97-.333.075-.664-.135-.74-.467-.075-.333.136-.665.468-.742 3.818-.872 7.08-.495 9.71 1.115.293.18.385.563.205.857zm1.225-2.72c-.227.367-.707.487-1.074.26-2.69-1.654-6.79-2.134-9.97-1.17-.413.125-.845-.107-.97-.522-.125-.413.107-.847.522-.972 3.637-1.104 8.162-.566 11.23 1.323.366.226.486.707.262 1.081zm.105-2.833C14.392 8.823 8.575 8.63 5.2 9.654c-.515.157-1.06-.134-1.217-.65-.157-.516.134-1.06.65-1.217 3.866-1.173 10.287-.955 14.347 1.455.464.275.615.872.34 1.336-.275.465-.873.617-1.337.34z"/></svg>
+            Ouvir no Spotify
+        </a>
+    </section>
+
+    <section id="quiz" class="section-padding bg-darker">
+        <div class="container max-width-md scroll-reveal">
+            <p class="section-tag">Oráculo das Eras</p>
+            <h2 class="section-title text-center">Qual "Gêmeos" você mais se parece?</h2>
+            <div class="quiz-card glass-card" id="quizBox">
+                <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgress" style="width: 0%"></div></div>
+                <p id="quizQuestion" style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 500; min-height: 50px;">Carregando enigma sideral...</p>
+                <div class="quiz-options" id="quizOptions"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="section-padding container max-width-md scroll-reveal text-center">
+        <p class="section-tag">Coordenadas Siderais</p>
+        <h2 class="section-title">ONDE SERÁ O ALINHAMENTO?</h2>
+        <p class="section-text" style="margin-bottom: 2rem;">Siga o mapa interativo abaixo para não se perder em nenhuma fenda temporal no caminho da festa.</p>
+        
+        <div class="map-wrapper glass-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.1172017888116!2d-48.0136559!3d-23.600129299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5cb48ca14360d%3A0x558cc6973e38895e!2sCh%C3%A1cara%20Julia!5e0!3m2!1spt-BR!2sbr!4v1781039248407!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="presenca" class="section-padding container max-width-md scroll-reveal">
+        <p class="section-tag">Presença Cósmica</p>
+        <h2 class="section-title text-center">Você fará parte da história?</h2>
+        <p class="section-text text-center">Confirme o seu manifesto temporal até o dia 15/06 para estabilizarmos os suprimentos na nave.</p>
+        
+        <form id="rsvpForm" class="glass-card rsvp-form" action="https://formspree.io/f/mjgzyedp" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="nome" required placeholder="Ex: Juan Roman Riquelme">
+            </div>
+            <div class="form-group" style="margin-top: 1rem;">
+                <label for="email">Endereço de E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Ex: mike@wazowski.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="status">Vai comparecer a festa?</label>
+                <select id="status" name="presenca" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="sim">Sim, estarei presente e trajado de alguma década, sou legal!</option>
+                    <option value="nao">Infelizmente sou peidão e vacilão, portanto não vou.</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Confirmar Presença</button>
+        </form>
+    </section>
+
+    <footer class="main-footer text-center">
+        <div class="footer-logo">O aniversário mais absurdo no mês de junho</div>
+        <p class="footer-quote">"Leve sua bebida e vá com a melhor roupa de uma década marcante."</p>
+        <p class="footer-bottom">© 2026 Alinhamento Estelar Gêmeos. Todos os direitos reservados são do Sr. Messi.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
