@@ -112,7 +112,7 @@ const dadosAniversariantes = {
         imgCrianca: "fotos/messikid.jpeg",
         imgAtual: "fotos/messi-perfil.jpg",
         instagram: "messicomamor",
-        desc: `Gabriel Messias, mais conhecido como Messie, é um jovem senhor de 180 anos de idade que, ao longo de sua vida, fez de Engenharia Aeroespacial à Arquitetura. Nesse meio tempo, aprendeu a não ficar bêbado com facilidade e a como evitar comandos policiais.
+        desc: `Gabriel Messias, mais conhecido como Messie, é um jovem senhor de ??? anos de idade que, ao longo de sua vida, fez de Engenharia Aeroespacial à Arquitetura. Nesse meio tempo, aprendeu a não ficar bêbado com facilidade e a como evitar comandos policiais.
 
 Conhecido por ser extremamente calmo e sereno, enquanto planeja fazer várias merdas e fala mais rápido que uma galinha tendo um infarto, ele representa, talvez, o gêmeo mais sensato. Contudo, também é o gêmeo com mais possibilidade de ir preso por agredir o gêmeo Rachid.
 
@@ -138,9 +138,11 @@ Reconhecido pelo riso frouxo, pelo azar em todos os jogos, por falar várias mer
         imgCrianca: "fotos/rachidkid.jpeg", // Ajustado para seguir o padrão se houver foto dele criança
         imgAtual: "fotos/perfil-rachid.jpg",
         instagram: "po_rachid",
-        desc: `O alvo preferido das ameaças de agressão do Messi e o mestre em testar a paciência alheia com uma serenidade invejável.
+        desc: `Se as energias caóticas se unissem e formassem alguém, seria o Gêmeo Rachid. Ele é o gêmeo favorito do Messie (mas ele não admite), o cara que mais ganha carona e o parceiro oficial nos rolês mais duvidosos (Messie não pode negar). Para fechar, também é primo oficial do gêmeo Charlinho.
 
-Rachid transita entre o caos completo e a paz absoluta, sendo o estopim de discussões bizarras. Se sobreviver até o final da festa sem levar um tabefe do Messie, consideraremos um milagre cósmico.`,
+Depois de largar mais de 7 cursos por culpa da indecisão e de uma pandemia, atualmente está em ADS e quase se formando (ainda bem). Fora isso, é bicampeão da Copa Cirrose, ama seus doguinhos e não troca por nada uma cerveja com os amigos. Aliás, quando bebe, ele ganha habilidades similares às do Homem-Aranha, como escalar telhados, dar cambalhotas e fazer exercícios físicos do nada; se ver ele assim, não dê corda (é perigoso).
+
+Nas horas vagas faz teatro e escreve poesia para sofrer por amores que nunca deram e nem darão certo. Atrapalhado e agitado igual ao esquilo do Deu a Louca na Chapeuzinho, ele tem o dom de falar antes de pensar, criando situações cômicas e muitas vezes vergonhosas.`,
         quote: `«Rachid tem o superpoder de quase apanhar do Messi e continuar sorrindo como se estivesse num comercial de champô.»`
     },
     vivi: {
@@ -149,7 +151,7 @@ Rachid transita entre o caos completo e a paz absoluta, sendo o estopim de discu
         imgCrianca: "fotos/vivikid.jpeg",
         imgAtual: "fotos/perfil-vivi.jpg",
         instagram: "vivipaiva.m",
-        desc: `Vivi é quase médica-veterinária, apaixonada por animais, plantas e música. Não sai de casa sem fone de ouvido. Tem um carinho especial pelas séries Sex and the City e Fleabag. Tenta levar a vida de forma leve, topando praticamente qualquer rolê; ama conhecer gente nova, conversar e criar memórias com quem gosta. Também ama o Léo, a Paçoca e qualquer momento que tenha música boa por perto.`,
+        desc: `Vivi é quase médica-veterinária, apaixonada por animais, plantas e música. Não sai de casa sem fone de ouvido. Tem um carinho especial pelas séries Sex and the City e Fleabag. Tenta levar a vida de forma leve, topando praticamente qualquer rolê; ama conhecer gente nova, conversar e criar memórias com quem gosta. Também ama o Léo, a Paçoca, o Zeca, a Laika, a Tula e o Caqui, e qualquer momento que tenha música boa por perto.`,
         quote: `«A Vivi gasta em mimos o que o Messi gasta em k-pop, mas faz tudo isso mantendo a pose de alta costura no meio do hospício.»`
     },
     charlinho: {
@@ -212,63 +214,63 @@ function closeBirthdayModal() {
 // ==========================================================================
 const quizData = [
     {
-        q: "Qual é o seu rolê ou comportamento ideal numa sexta-feira à noite?",
+        q: "So fosse fosse escolher um desses cursos, qual seria?",
         o: [
-            { text: "Reclamar que no meu tempo tudo isso aqui era mato e lava pura.", target: "messi" },
-            { text: "Ficar em casa limpando a coleção de disquetes e tazos antigos.", target: "michel" },
-            { text: "Analisar as bilheterias de cinema e cuidar do bichinho virtual.", target: "rachid" },
-            { text: "Ficar horas escolhendo o subfon perfeito e o status ideal no MSN.", target: "vivi" },
-            { text: "Rolar o feed em alta velocidade gravando vídeos e consumindo memes.", target: "charlinho" }
+            { text: "Arquitetura, sou bom com lego.", target: "messi" },
+            { text: "Engenharia química, quero fazer loló.", target: "michel" },
+            { text: "Todos, a vida é muito curta pra fazer só um.", target: "rachid" },
+            { text: "Veterinária, ❤️ bichinhos.", target: "vivi" },
+            { text: "Psicologia, vou tratar minha própia depressão.", target: "charlinho" }
         ]
     },
     {
-        q: "Se você pudesse viajar no tempo para uma fenda temporal, qual escolheria?",
+        q: "Qual dessas opções você mais se identifica quando está alcoolizado(a)?",
         o: [
-            { text: "Voltar para o Pré-Cambriano para ajudar a resfriar o magma terrestre.", target: "messi" },
-            { text: "Voltar para 1996 e testemunhar de perto a clonagem da ovelha Dolly.", target: "michel" },
-            { text: "Entrar a bordo do Titanic sabendo exatamente onde fica o iceberg.", target: "rachid" },
-            { text: "Ficar preso eternamente no ano de 2003 usando a versão clássica do Orkut.", target: "vivi" },
-            { text: "Viajar para 2004 para criar o Facebook direto do meu quarto de faculdade.", target: "charlinho" }
+            { text: "Choro muito e quero abraçar meus amigos.", target: "michel" },
+            { text: "Quero um karaoke, começo a cantar e ser performatico.", target: "charlinho" },
+            { text: "Fico mais afetivo, analiso tudo e rio bastante.", target: "vivi" },
+            { text: "Começo a fazer exercícios, fico agitado e sem senso de perigo físico.", target: "rachid" },
+            { text: "Continua bebendo, tento marcar um rôle para São Paulo e dou carona para todo mundo.", target: "messi" }
         ]
     },
     {
-        q: "Escolha uma habilidade tecnológica ou analógica indispensável para você:",
+        q: "Se fosse tivesse que escolher uma dessas bandas/arstistas, qual seria?",
         o: [
-            { text: "Conversar fluentemente com bactérias anaeróbicas e fósseis.", target: "messi" },
-            { text: "Consertar computadores antigos soprando cartuchos de jogos.", target: "michel" },
-            { text: "Manter 3 Tamagotchis vivos ao mesmo tempo com responsabilidade.", target: "rachid" },
-            { text: "Digitar a 150 palavras por minuto mandando 'Chamar Atenção' no chat.", target: "vivi" },
-            { text: "Capturar fotos esteticamente incríveis usando as primeiras câmeras de flip.", target: "charlinho" }
+            { text: "One Direction.", target: "rachid" },
+            { text: "Paramore.", target: "vivi" },
+            { text: "Artic Monkeys", target: "charlinho" },
+            { text: "Black Pink", target: "messi" },
+            { text: "Dua Lipa.", target: "michel" }
         ]
     },
     {
-        q: "Qual é a sua reação imediata quando um aparelho tecnológico falha ou perde o sinal?",
+        q: "Se você pudesse ser um animal, qual você seria?",
         o: [
-            { text: "Digo que na Idade da Pedra as pedras lascadas nunca falhavam.", target: "messi" },
-            { text: "Abro o menu de configurações para diagnosticar o hardware manualmente.", target: "michel" },
-            { text: "Fico nostálgico lembrando do som clássico e charmoso da internet discada.", target: "rachid" },
-            { text: "Acho que é o Bug do Milênio que finalmente veio cobrar a sua conta atrasada.", target: "vivi" },
-            { text: "Procuro imediatamente outra rede de alta velocidade para reconectar.", target: "charlinho" }
+            { text: "Dinossauro, RAWWWWLLL.", target: "michel" },
+            { text: "Ford KA 2007, VRUMMM.", target: "messi" },
+            { text: "Pinguim, insira aqui o som que o pinguim faz", target: "rachid" },
+            { text: "Corsinha 4 portas, TRRRRR", target: "charlinho" },
+            { text: "Doguinho, AU AU", target: "vivi" }
         ]
     },
     {
-        q: "Escolha um artefato do passado que define perfeitamente a sua essência energética:",
+        q: "Sua sexta a noite perfeita é?",
         o: [
-            { text: "Uma rocha magmática intacta extraída do fundo da crosta terrestre.", target: "messi" },
-            { text: "Um disquete de 1.44MB contendo arquivos misteriosos salvos.", target: "michel" },
-            { text: "Uma fita VHS original rebobinada perfeitamente com uma caneta.", target: "rachid" },
-            { text: "Um caderno cheio de depoimentos em formato de 'scraps' e correntes.", target: "vivi" },
-            { text: "O primeiríssimo modelo de smartphone com tela touch do mercado.", target: "charlinho" }
+            { text: "Um rolê duvidoso em Osasco.", target: "messi" },
+            { text: "Tomar canelinha com os amigos e ficar falando grosselha.", target: "michel" },
+            { text: "Cervejinha no bortoleto com os amigos e depois comer um lanche no BK.", target: "rachid" },
+            { text: "Passar junto da pessoa amada.", target: "vivi" },
+            { text: "Encontrar o pessoal no role junto da minha pessoa amada.", target: "charlinho" }
         ]
     },
     {
-        q: "Na pista de dance da festa estelar, onde você provavelmente será encontrado?",
+        q: "Qual desses times você se indetifica mais?",
         o: [
-            { text: "Sentado num canto dizendo que a música antiga era muito melhor.", target: "messi" },
-            { text: "Avaliando a qualidade dos alto-falantes e a fiação da iluminação.", target: "michel" },
-            { text: "Dançando de forma performática os maiores hits que marcaram o fim de século.", target: "rachid" },
-            { text: "Tirando fotos conceituais com poses clássicas para postar no feed.", target: "vivi" },
-            { text: "Transmitindo a festa inteira por projeção digital em tempo real.", target: "charlinho" }
+            { text: "Palmeiras", target: "rachid" },
+            { text: "Cruzeiro", target: "vivi" },
+            { text: "Santos do Pelé", target: "messi" },
+            { text: "Santos do neymar", target: "michel" },
+            { text: "Paysandu", target: "charlinho" }
         ]
     }
 ];
@@ -280,8 +282,8 @@ const twinNames = {
     messi: "Messi (O Gêmeo Ancião)",
     michel: "Michel (O Gêmeo Bonzinho)",
     rachid: "Rachid (O Gêmeo Árabe)",
-    vivi: "Vivi (A Relíquia dos Anos 2000)",
-    charlinho: "Charlinho (O Gêmeo Indie)"
+    vivi: "Vivi (A Gêmea Legal)",
+    charlinho: "Charlinho (O Gêmeo Mal)"
 };
 
 function loadQuiz() {
@@ -296,6 +298,8 @@ function loadQuiz() {
     const progressPercent = (currentQuiz / quizData.length) * 100;
     pBar.style.width = `${progressPercent}%`;
     
+  // ... código anterior da função loadQuiz igual ...
+    
     if(currentQuiz >= quizData.length) {
         let winner = "messi";
         let maxScore = -1;
@@ -307,18 +311,49 @@ function loadQuiz() {
             }
         }
         
+        // 1. CAMINHO DAS FOTOS QUE VOCÊ QUER QUE APAREÇAM NO RESULTADO DO QUIZ
+        // Altere o que está entre aspas para o caminho da foto que você escolher!
+        const fotosResultado = {
+            messi: "fotos/resultado-messi.jpg",
+            michel: "fotos/resultado-michel.jpg",
+            rachid: "fotos/resultado-rachid.jpg",
+            vivi: "fotos/resultado-vivi.jpg",
+            charlinho: "fotos/charlinhokid.jpg"
+        };
+
+        // 2. TEXTOS PERSONALIZADOS PARA O RESULTADO DO QUIZ
+        const textosResultado = {
+            messi: "Você é o ancião do grupo. Prefere a calmaria (ou finge que prefere), planeja mil coisas ao mesmo tempo a 200km/h e tem uma paciência milenar que pode sumir se te derem jurupinga.",
+            michel: "Você é o resenheiro oficial! Tem o riso frouxo, ama uma nostalgia (e carros antigos), mas cuidado: uma dose de canelinha e você já está abraçando os amigos e chorando do nada.",
+            rachid: "Você é o mestre em testar a paciência alheia com um sorriso sereno no rosto. Vive entre o caos completo e a paz absoluta, e tem o superpoder de sair ileso de qualquer encrenca.",
+            vivi: "Você é uma relíquia viva dos anos 2000! Não sai de casa sem fone de ouvido, adora criar memórias com gente nova e mantém a pose de alta costura mesmo no meio do hospício.",
+            charlinho: "Você é o intelectual indie do rolê. Mistura humor irônico, autodepreciativo e muita psicanálise de boteco. Tem o cortisol alto, mas compensa com muito carisma."
+        };
+        
         document.getElementById("quizBox").innerHTML = `
             <div style="text-align:center; padding: 1rem 0;">
                 <h3 style="color:var(--color-accent); font-family:var(--font-title); font-size:1.6rem; margin-bottom:1rem;">O Oráculo Decidiu!</h3>
-                <p style="font-size:1.1rem; color:var(--text-secondary); line-height:1.6;">
-                    De acordo com as tuas escolhas através das fendas cósmicas, tu és mais parecido com: <br>
+                
+                <div style="width: 150px; height: 150px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; border: 2px solid var(--color-accent); box-shadow: 0 0 15px rgba(200, 166, 106, 0.3);">
+                    <img src="${fotosResultado[winner]}" alt="${twinNames[winner]}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <p style="font-size:1.1rem; color:var(--text-secondary); line-height:1.6; margin-bottom: 1rem;">
+                    De acordo com as tuas escolhas através das fendas cósmicas, tu es mais parecido com: <br>
                     <strong style="color:#fff; font-size:1.3rem; display:block; margin-top:0.8rem; font-family:var(--font-title);">${twinNames[winner]}</strong>
                 </p>
+                
+                <p style="font-size:0.95rem; color:var(--text-secondary); opacity:0.9; line-height:1.5; max-width:450px; margin: 0 auto 1.5rem auto; padding: 0 1rem;">
+                    ${textosResultado[winner]}
+                </p>
+                
                 <p style="font-size:0.85rem; opacity:0.6; margin-top:1.5rem;">Sincronização cósmica concluída com sucesso. 🌌</p>
             </div>
         `;
         return;
     }
+    
+    // ... restante da função loadQuiz igual ...
     
     const currentData = quizData[currentQuiz];
     qBox.innerText = currentData.q;
