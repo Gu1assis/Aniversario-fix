@@ -128,7 +128,7 @@ Não o alimente com jurupinga.`,
         imgAtual: "fotos/mike3.jpg",
         instagram: "michelzeine",
         desc: `Este é Michel, o gêmeo especial, engenheiro químico que (ainda) não vende drogas, profissional em inserir a arte da resenha em qualquer rolê e em falar com a mesma empolgação sobre dinossauros, Overwatch e uma Parati duas portas 1992 lindíssima (que carro!).
-Reconhecido pelo riso frouxo, pelo azar em todos os jogos, por falar várias merdas e por amar demais, Michel vive o sonho de tomar os meios de produção enquanto canta para cachorros. Santista amaldiçoado por escolha (e pela ausência de amor-próprio), também é lembrado por uma característica peculiar: depois de uma dose de Canelinha, existe uma chance estatisticamente alta de começar a abraçar os amigos e chorar por algum motivo misterioso.`,
+Reconhecido pelo riso frouxo, pelo azar em todos os jogos, por falar várias merdas e por amar demais a Beatriz, Michel vive o sonho de tomar os meios de produção enquanto canta para cachorros. Santista amaldiçoado por escolha (e pela ausência de amor-próprio), também é lembrado por uma característica peculiar: depois de uma dose de Canelinha, existe uma chance estatisticamente alta de começar a abraçar os amigos e chorar por algum motivo misterioso.`,
         quote: `«Esse conteúdo só será desbloqueado no dia 20 ás 21:30»`
     },
     rachid: {
