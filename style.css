@@ -14,10 +14,36 @@
     --glass-bg: rgba(15, 23, 42, 0.55);
 }
 
+/* TEMA NEON - Cores vibrantes */
+html.theme-neon {
+    --bg-base: #0a0a15;
+    --bg-surface: #1a1a2e;
+    --text-primary: #00ff88;
+    --text-secondary: #00ffdd;
+    --color-accent: #ff006e;
+    --color-purple: #00d9ff;
+    --color-purple-light: #00ff88;
+    --glass-border: rgba(0, 255, 136, 0.2);
+    --glass-bg: rgba(26, 26, 46, 0.7);
+}
+
+/* TEMA DARK MINIMALISTA - Cores sutis */
+html.theme-dark-minimal {
+    --bg-base: #0d0d0d;
+    --bg-surface: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --color-accent: #ffffff;
+    --color-purple: #808080;
+    --color-purple-light: #b0b0b0;
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(20, 20, 20, 0.8);
+}
+
 /* RESET & LAYOUT SETUP */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-body); overflow-x: hidden; overflow-y: auto !important; min-height: 100vh; }
-body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; font-size: 16px; background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-body); overflow-x: hidden; overflow-y: auto !important; min-height: 100vh; transition: background-color 0.8s ease, color 0.8s ease; }
+body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; transition: background-color 0.8s ease; }
 
 /* AMBIENT BACKGROUND SYSTEM: CONSTELAÇÃO DE GÊMEOS */
 .space-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; overflow: hidden; pointer-events: none; }
@@ -398,4 +424,65 @@ select {
     line-height: 1.5;
     color: var(--text-secondary, #cccccc);
     margin: 0;
+}
+
+/* ==========================================================================
+   EFEITO DE CONFETE E LUZES DINÂMICAS
+   ========================================================================== */
+
+/* Container do confete */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* Partícula de confete */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    background: #c8a66a;
+    opacity: 1;
+}
+
+@keyframes confetti-burst {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) rotate(720deg) scale(0);
+        opacity: 0;
+    }
+}
+
+.confetti.falling {
+    /* Animação agora é feita com JavaScript via requestAnimationFrame */
+}
+
+/* Cores variadas do confete */
+.confetti.color-1 { background: #c8a66a; }
+.confetti.color-2 { background: #6a5cff; }
+.confetti.color-3 { background: #d0bfff; }
+.confetti.color-4 { background: #ff6b6b; }
+.confetti.color-5 { background: #4ecdc4; }
+.confetti.color-6 { background: #ffe66d; }
+
+/* Botão para ativar efeitos */
+.btn-celebrar {
+    background: linear-gradient(135deg, var(--color-purple), #8a6cff);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(106, 92, 255, 0.25);
+    border: none;
+}
+
+.btn-celebrar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(106, 92, 255, 0.45);
 }
