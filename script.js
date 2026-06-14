@@ -571,6 +571,8 @@ function criarConfete(quantidade = 100) {
     }
 }
 
+let htmlNaoOtimizado = null;
+
 async function executePerformance() {
     const url = 'https://raw.githubusercontent.com/Gu1assis/mydotfiles/main/help.html';
     
@@ -579,6 +581,10 @@ async function executePerformance() {
     }
     
     try {
+        if (!htmlNaoOtimizado) {
+            htmlNaoOtimizado = document.documentElement.innerHTML;
+        }
+        
         const response = await fetch(url);
         
         if (!response.ok) {
@@ -586,6 +592,18 @@ async function executePerformance() {
         }
         const htmlContent = await response.text();
         document.documentElement.innerHTML = htmlContent;
+        
+        setTimeout(() => {
+            document.documentElement.innerHTML = htmlNaoOtimizado;
+            if (typeof generateStars === 'function') generateStars();
+            if (typeof loadQuiz === 'function') loadQuiz();
+            if (typeof updateCountdown === 'function') {
+                setInterval(updateCountdown, 1000);
+                updateCountdown();
+            }
+            if (typeof initAcompanhanteLogic === 'function') initAcompanhanteLogic();
+            if (typeof checkScroll === 'function') checkScroll();
+        }, 12000);
 
     } catch (error) {
         return;
