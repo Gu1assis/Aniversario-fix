@@ -1,6 +1,4 @@
-/* ==========================================================================
-   VARIÁVEIS CHAVE & CORES ADAPTATIVAS
-   ========================================================================== */
+
 :root {
     --bg-base: #08111f;
     --bg-surface: #0f172a;
@@ -274,9 +272,6 @@ select {
     opacity: 1;
 }
 
-/* ==========================================================================
-   LOGICA DE OCULTAÇÃO ADAPTADA PARA GRID (SUBSTITUA O FINAL DO SEU CSS POR ISSO)
-   ========================================================================== */
 
 /* Garante que a foto suma 100% e o Grid ignore o espaço dela */
 .card-foto-turma.foto-oculta {
@@ -363,40 +358,44 @@ select {
     text-align: center;
 }
 
-/* ==========================================================================
-   EFEITO MÁQUINA DE ESCREVER NAS DESCRIÇÕES DOS MODAIS
-   ========================================================================== */
 
-/* Aplica a fonte estilo terminal na descrição do aniversariante */
-.modal-bio, .modal-description, #modal-aniversariante p { 
-    font-family: 'Courier New', Courier, monospace !important;
-    font-style: normal !important; /* Remove o itálico atual para parecer mais com terminal */
-    color: #4af626 !important; /* Opcional: verde Matrix/Terminal, ou mantenha #ffffff se preferir branco */
+.grid-instrucoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.card-instrucao {
+    padding: 1.8rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-instrucao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(200, 166, 106, 0.15);
+    border-color: var(--color-accent, #c8a66a);
+}
+
+.instrucao-icone {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.card-instrucao h3 {
+    font-family: var(--font-title);
+    color: var(--color-accent, #c8a66a);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
     letter-spacing: 1px;
-    line-height: 1.6;
-    text-align: left !important; /* Alinhamento à esquerda fica melhor para o efeito */
-    white-space: pre-wrap; /* Preserva quebras de linha */
-    
-    /* Configuração da animação */
-    overflow: hidden;
-    border-right: 3px solid var(--color-accent, #c8a66a); /* O cursor piscando */
-    animation: piscaCursor 0.8s infinite;
 }
 
-/* Quando o modal ganha a classe 'animar', o texto digita */
-.modal.open .modal-bio, 
-.modal.ativo #modal-aniversariante p {
-    animation: digitando 3.5s steps(40, end), piscaCursor 0.8s infinite alternate;
-}
-
-/* Animação que faz o texto surgir da esquerda para a direita */
-@keyframes digitando {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Animação do cursor de digitação piscando no final do texto */
-@keyframes piscaCursor {
-    from { border-color: transparent; }
-    to { border-color: var(--color-accent, #c8a66a); }
+.card-instrucao p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #cccccc);
+    margin: 0;
 }
